@@ -1,0 +1,372 @@
+
+
+/* Main content style */
+#main-content {
+    display: none; /* Initially hidden */
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #181818; /* Darker background for better contrast */
+  color: #ffffff; /* Light text color for readability */
+  
+    overflow: auto;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer */
+  
+}
+
+body::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
+
+.navbar {
+  width: 100%;
+  height: 70px; /* Slightly increased height for a more spacious navbar */
+  background-color: #222; /* Dark gray for the navbar */
+  position: sticky;
+  top: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 100%;
+  color: rgb(255, 255, 255);
+  font-family: 'Sens', sans-serif; /* Replace 'Arial' with your desired font */
+}
+
+.logo-container {
+  flex: 1;
+}
+
+.logo {
+  width: 200px; /* Slightly smaller logo */
+  height: auto;
+}
+
+.menu-container {
+  flex: 6;
+  display: flex;
+  justify-content: center;
+}
+
+.menu-list {
+  display: flex;
+  list-style: none;
+  font-family: "Sen", sans-serif;
+}
+
+.menu-list-item {
+  margin-right: 30px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.menu-list-item:hover {
+  color: #ffbf00; /* Accent color */
+  transform: translateY(-5px); /* Subtle hover effect */
+}
+
+.menu-list-item.active {
+  font-weight: bold;
+  color: #ffbf00; /* Accent color for active item */
+}
+
+.profile-container {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.profile-text-container {
+  margin: 0 20px;
+  font-family: "Sen", sans-serif;
+}
+
+.profile-picture {
+  width: 40px; /* Slightly larger profile picture */
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffbf00; /* Border around profile picture */
+}
+
+.container {
+  background-color: #212121;
+  min-height: calc(90vh - 300px);
+  padding: 20px;
+}
+
+.featured-content {
+  height: 80vh;
+  padding: 50px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('img/Kanguva Cover.gif');
+  background-size: cover !important;
+  background-position: center center;
+  background-attachment: fixed;
+  color: #ffffff;
+  font-weight: medium;
+  display: flex;
+  flex-direction: column;  /* Stacking title and description vertically */
+  justify-content: left;
+  align-items: left;
+  text-align: left;
+  border-radius: 10px;
+  position: relative;
+}
+
+.featured-title {
+  width: 25%; /* Adjusted width for title */
+  font-size: 30px;
+  color: #ffbf00; /* Accent color */
+  margin-bottom: 160px;  /* Added space between title and description */
+  line-height: 1; /* Increased line-height for better readability */
+  position: absolute;
+  bottom: 150px;
+  left: 70px;
+  font-family: "Sen", sans-serif;
+}
+
+.featured-desc {
+  width: 35%;  /* Adjusted width for the description */
+  color: #dcdcdc;
+  font-size: 11px;  /* Smaller font size for description */
+  margin: 20;  /* Removed margin to reduce space around the description */
+  padding: 0 20px;  /* Added padding to balance the text */
+  line-height: 1.5; /* Adjust line height for better readability */
+  position: absolute;
+  bottom: 120px;
+  left: 20px;
+}
+
+.featured-button {
+  padding: 8px 24px;
+  font-size: 16px;
+  font-family: "Sen", sans-serif;
+  background-color: #ffbf00; /* Accent color */
+  color: #000000;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 50px;
+  left: 20px;
+  transform: translateX(-5%);
+  left: 10%;
+  opacity: 0.8;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  z-index: 2;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Added shadow for depth */
+}
+
+.featured-content:hover .featured-button {
+  opacity: 1;
+  transform: translateY(-1px); /* Slight upward movement on hover */
+}
+
+.featured-button:hover {
+  background-color: #ffbf00; /* Slightly darker accent color on hover */
+  transform: translateY(-1px); /* Added subtle hover effect */
+}
+
+/* Main Container for New Releases */
+/* General Setup */
+/* General Setup */
+/* Container for the movie list */
+.movie-list-container {
+  padding: 10px;
+  font-size: small;
+  text-align: left;
+  position: relative;
+  background: linear-gradient(to right, #1e1e1e, #333);
+  animation: fadeIn 2s ease-out;
+  overflow: hidden; /* Preventing overflow */
+}
+
+/* Movie Title Styling */
+.movie-list-title {
+  font-size: 1.5em;
+  font-weight:450;
+  margin-bottom: 20px;
+  margin-right: 50%;
+  text-transform: uppercase;
+  font-family: 'Sen', sans-serif; /* Replace 'Arial' with your desired font */
+  background: linear-gradient(90deg, #090909, #2a2a2a); /* Adjust gradient colors as needed */
+}
+
+
+/* Movie List Wrapper */
+/* Remove horizontal scrolling from the movie list */
+.movie-list-wrapper {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 20px;
+  justify-content: center;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  overflow: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Arrow buttons for navigation */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  color: #ffbf00;
+  cursor: pointer;
+  z-index: 10;
+}
+
+
+
+/* Left Arrow */
+.arrow-left {
+  left: 10px;
+}
+
+/* Right Arrow */
+.arrow-right {
+  right: 10px;
+}
+
+/* Ensure the movie cards are horizontally aligned */
+.movie-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+
+/* Movie Card Flip Effect */
+.movie-card {
+  position: relative;
+  left: 400px;
+  width: 250px; /* Fixed width */
+  height: 350px; /* Fixed height */
+  perspective: 1000px;
+}
+
+.movie-card-front, .movie-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  transition: transform 0.6s;
+}
+
+.movie-card-front {
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie-card-back {
+  position: relative; /* Ensures text stays on top */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)),
+                url('img/MOVIE CONT BACK.jpg') center/cover no-repeat;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  gap: 10px; /* Add space between elements */
+}
+
+.movie-card:hover .movie-card-front {
+  transform: rotateY(180deg);
+}
+
+.movie-card:hover .movie-card-back {
+  transform: rotateY(0deg);
+}
+
+/* Movie Image Styling */
+.movie-list-item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.movie-card:hover .movie-list-item-img {
+  transform: scale(1.1); /* Zoom-in effect on hover */
+}
+
+/* Movie Title and Description Styling */
+.movie-list-item-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 2px;
+  font-family: "Sen", sans-serif;
+}
+
+.movie-list-item-desc {
+  font-size: 0.9em;
+  color: #dcdcdc;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+/* Watch Button Styling */
+.movie-list-item-button {
+  background: linear-gradient(45deg, #ffd900, #ff3c00);
+  color: #000000;
+  font-family: "Sen", sans-serif;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.movie-list-item-button:hover {
+  background: linear-gradient(45deg, #ffbf00, #ffbf00);
+  transform: scale(1.1);
+}
+
+/* Scroll Snapping for Movie Items */
+.movie-list-wrapper > div {
+  scroll-snap-align: center; /* Ensures center alignment */
+}
+
+/* Uniform Movie List Item Size */
+.movie-list-item {
+  width: 250px; /* Ensuring uniform width */
+  height: 350px; /* Ensuring uniform height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #222;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  scroll-snap-align: center;
+}
+
+/* Movie Item Background */
+.movie-list-item {
+  background: #222;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
