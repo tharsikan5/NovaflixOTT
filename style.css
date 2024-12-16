@@ -1,11 +1,7 @@
-
-
 /* Main content style */
 #main-content {
-    display: none; /* Initially hidden */
+  display: none; /* Initially hidden */
 }
-
-
 
 * {
   margin: 0;
@@ -17,11 +13,9 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: #181818; /* Darker background for better contrast */
   color: #ffffff; /* Light text color for readability */
-  
-    overflow: auto;
-    scrollbar-width: none; /* For Firefox */
-    -ms-overflow-style: none; /* For Internet Explorer */
-  
+  overflow: auto;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer */
 }
 
 body::-webkit-scrollbar {
@@ -32,7 +26,7 @@ body::-webkit-scrollbar {
   width: 100%;
   height: 70px; /* Slightly increased height for a more spacious navbar */
   background-color: #222; /* Dark gray for the navbar */
-  position: sticky;
+  position:static;
   top: 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -68,6 +62,12 @@ body::-webkit-scrollbar {
   font-family: "Sen", sans-serif;
 }
 
+@media (max-width: 768px) {
+  .menu-list {
+    display: none;
+  }
+}
+
 .menu-list-item {
   margin-right: 30px;
   transition: transform 0.3s ease, color 0.3s ease;
@@ -95,6 +95,12 @@ body::-webkit-scrollbar {
   font-family: "Sen", sans-serif;
 }
 
+@media (max-width: 768px) {
+  .profile-text-container {
+    display: none;
+  }
+}
+
 .profile-picture {
   width: 40px; /* Slightly larger profile picture */
   height: 40px;
@@ -113,19 +119,30 @@ body::-webkit-scrollbar {
   height: 80vh;
   padding: 50px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('img/Kanguva Cover.gif');
-  background-size: cover !important;
-  background-position: center center;
-  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
   color: #ffffff;
   font-weight: medium;
   display: flex;
-  flex-direction: column;  /* Stacking title and description vertically */
-  justify-content: left;
-  align-items: left;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   text-align: left;
   border-radius: 10px;
   position: relative;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .featured-content {
+    height: 70vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('img/KANGUVA - Mobile Screen.gif');
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+
 
 .featured-title {
   width: 25%; /* Adjusted width for title */
@@ -139,6 +156,16 @@ body::-webkit-scrollbar {
   font-family: "Sen", sans-serif;
 }
 
+@media only screen and (max-width: 600px) {
+  .featured-title {
+    bottom: 65px;
+    left: 40px;
+    align-items: center;
+    height: 10vh;
+    width: 20vh;
+  }
+}
+
 .featured-desc {
   width: 35%;  /* Adjusted width for the description */
   color: #dcdcdc;
@@ -149,6 +176,13 @@ body::-webkit-scrollbar {
   position: absolute;
   bottom: 120px;
   left: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .featured-desc {
+    left: 0px;
+    width: 80%;
+  }
 }
 
 .featured-button {
@@ -171,6 +205,13 @@ body::-webkit-scrollbar {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Added shadow for depth */
 }
 
+@media only screen and (max-width: 600px) {
+  .featured-button {
+    bottom: 65px;
+    align-items: center;
+  }
+}
+
 .featured-content:hover .featured-button {
   opacity: 1;
   transform: translateY(-1px); /* Slight upward movement on hover */
@@ -181,10 +222,8 @@ body::-webkit-scrollbar {
   transform: translateY(-1px); /* Added subtle hover effect */
 }
 
+/* General Setup */
 /* Main Container for New Releases */
-/* General Setup */
-/* General Setup */
-/* Container for the movie list */
 .movie-list-container {
   padding: 10px;
   font-size: small;
@@ -192,13 +231,12 @@ body::-webkit-scrollbar {
   position: relative;
   background: linear-gradient(to right, #1e1e1e, #333);
   animation: fadeIn 2s ease-out;
-  overflow: hidden; /* Preventing overflow */
+  overflow: scroll /* Preventing overflow */
 }
 
-/* Movie Title Styling */
 .movie-list-title {
   font-size: 1.5em;
-  font-weight:450;
+  font-weight: 450;
   margin-bottom: 20px;
   margin-right: 50%;
   text-transform: uppercase;
@@ -206,17 +244,22 @@ body::-webkit-scrollbar {
   background: linear-gradient(90deg, #090909, #2a2a2a); /* Adjust gradient colors as needed */
 }
 
-
 /* Movie List Wrapper */
-/* Remove horizontal scrolling from the movie list */
 .movie-list-wrapper {
   display: flex;
   gap: 20px;
-  padding-bottom: 20px;
+  padding-left: 450px;
+  border-left-style: 20px;
   justify-content: center;
-  scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  overflow: hidden; /* Prevent horizontal scrolling */
+  overflow: auto; /* Prevent horizontal scrolling */
+
+}
+
+@media only screen and (max-width: 600px) {
+  .movie-list-wrapper {
+    padding-left: 940px;
+  }
 }
 
 /* Arrow buttons for navigation */
@@ -230,14 +273,10 @@ body::-webkit-scrollbar {
   z-index: 10;
 }
 
-
-
-/* Left Arrow */
 .arrow-left {
   left: 10px;
 }
 
-/* Right Arrow */
 .arrow-right {
   right: 10px;
 }
@@ -249,7 +288,6 @@ body::-webkit-scrollbar {
   flex-wrap: nowrap;
 }
 
-
 /* Movie Card Flip Effect */
 .movie-card {
   position: relative;
@@ -259,7 +297,8 @@ body::-webkit-scrollbar {
   perspective: 1000px;
 }
 
-.movie-card-front, .movie-card-back {
+.movie-card-front,
+.movie-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -276,9 +315,8 @@ body::-webkit-scrollbar {
 }
 
 .movie-card-back {
-  position: relative; /* Ensures text stays on top */
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)),
-                url('img/MOVIE CONT BACK.jpg') center/cover no-repeat;
+  position: relative;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url('img/MOVIE CONT BACK.jpg') center/cover no-repeat;
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column; /* Stack elements vertically */
@@ -298,7 +336,6 @@ body::-webkit-scrollbar {
   transform: rotateY(0deg);
 }
 
-/* Movie Image Styling */
 .movie-list-item-img {
   width: 100%;
   height: 100%;
@@ -311,7 +348,6 @@ body::-webkit-scrollbar {
   transform: scale(1.1); /* Zoom-in effect on hover */
 }
 
-/* Movie Title and Description Styling */
 .movie-list-item-title {
   font-size: 1.2em;
   font-weight: bold;
@@ -337,36 +373,6 @@ body::-webkit-scrollbar {
   border: none;
   border-radius: 25px;
   cursor: pointer;
-  margin-top: 15px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.movie-list-item-button:hover {
-  background: linear-gradient(45deg, #ffbf00, #ffbf00);
-  transform: scale(1.1);
-}
-
-/* Scroll Snapping for Movie Items */
-.movie-list-wrapper > div {
-  scroll-snap-align: center; /* Ensures center alignment */
-}
-
-/* Uniform Movie List Item Size */
-.movie-list-item {
-  width: 250px; /* Ensuring uniform width */
-  height: 350px; /* Ensuring uniform height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #222;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  scroll-snap-align: center;
-}
-
-/* Movie Item Background */
-.movie-list-item {
-  background: #222;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color .2s ;
 }
