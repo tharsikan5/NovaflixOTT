@@ -259,6 +259,7 @@ body::-webkit-scrollbar {
 @media only screen and (max-width: 600px) {
   .movie-list-wrapper {
     padding-left: 940px;
+    left: -20px;
   }
 }
 
