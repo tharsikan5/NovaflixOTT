@@ -248,7 +248,7 @@ body::-webkit-scrollbar {
 .movie-list-wrapper {
   display: flex;
   gap: 20px;
-  padding-left: 300px;
+  padding-left: 100px;
   border-left-style: 20px;
   justify-content: center;
   -webkit-overflow-scrolling: touch;
