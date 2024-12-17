@@ -231,7 +231,7 @@ body::-webkit-scrollbar {
   position: relative;
   background: linear-gradient(to right, #1e1e1e, #333);
   animation: fadeIn 2s ease-out;
-  overflow: scroll /* Preventing overflow */
+  overflow: auto /* Preventing overflow */
 }
 
 .movie-list-title {
@@ -249,7 +249,7 @@ body::-webkit-scrollbar {
   display: flex;
   gap: 20px;
   padding-left: 450px;
-  border-left-style: 200px;
+  border-left-style: 20px;
   justify-content: center;
   -webkit-overflow-scrolling: touch;
   overflow: auto; /* Prevent horizontal scrolling */
