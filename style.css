@@ -231,8 +231,8 @@ body::-webkit-scrollbar {
   position: relative;
   background: linear-gradient(to right, #1e1e1e, #333);
   animation: fadeIn 2s ease-out;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .movie-list-title {
@@ -253,8 +253,8 @@ body::-webkit-scrollbar {
   border-left-style: 20px;
   justify-content: center;
   -webkit-overflow-scrolling: touch;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
   
 
 }
@@ -263,8 +263,8 @@ body::-webkit-scrollbar {
   .movie-list-wrapper {
     padding-left: 940px;
     left: -20px;
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
 }
 
