@@ -248,6 +248,7 @@ body::-webkit-scrollbar {
 .movie-list-wrapper {
   display: flex;
   gap: 20px;
+  left: -20px;
   border-left-style: 20px;
   justify-content: center;
   -webkit-overflow-scrolling: touch;
