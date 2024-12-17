@@ -249,7 +249,7 @@ body::-webkit-scrollbar {
   display: flex;
   gap: 20px;
   padding-left: 450px;
-  border-left-style: 20px;
+  border-left-style: 200px;
   justify-content: center;
   -webkit-overflow-scrolling: touch;
   overflow: auto; /* Prevent horizontal scrolling */
